@@ -24,7 +24,7 @@
             <li><a href="#Presentation">Presentation</a></li>
             <li><a href="#Honors-Awards">Honors/Awards</a></li>
             <li><a href="#Courses">Courses</a></li>
-            <li><a href="#Paststuffs">Past stuffs</a></li>
+            <li><a href="#BlogPodcast">Blog/Podcast</a></li>
             <!-- <li><a href="#contact">Contact</a></li> -->
           	<li><a href="CV.pdf" target="_blank">CV</a></li>
         </ul>
@@ -74,8 +74,10 @@
             <div>
                 <h3>Nonnegative Matrix Factorization - Rice REU STAT-DATASCI 2023</h3>
                 <div class="container" >
-                    <div class="image" style="float:left;width:250px;height:300px;padding-right:30px;">
-                      <img src="ricelogo.png">
+                    <div class="image" style="float:left;width:250px;height:200px;padding-right:30px;">
+                      <img src="NMF-table.png">
+                      <br>
+                      <img src="MMimage.png">
                     </div>
                     <div class="text">
                         <p> <b>Nonnegative Matrix Factorization (NMF)</b> is a dimensionality reduction technique used in data analysis and machine learning. 
@@ -101,20 +103,26 @@
             <div>
                 <h3>Geodesics Nets Construction</h3>
                 <div class="container" >
-                    <div class="image" style="float:left;width:250px;height:200px;padding-right:30px;">
+                    <div class="image" style="float:left;width:250px;height:100px;padding-right:30px;">
                       <img src="geodesicnet.png">
                     </div>
                     <div class="text">
                         <p> A <b>geodesic net</b> is a network that connects multiple points with the geodesics while ensuring that each additional point is <b>"<i> balanced </i>"</b> and stretched equally by its neighbors through those curves. 
                         In this project, we are finding a new algorithm that can construct geodesic nets on different surfaces based on <b>Steiner trees</b> since Steiner trees are satisfied to be geodesic nets. 
-                        Our algorithm is inspired by the construction of Steiner Tree by <b>bubble soap film</b>, illustrated in the video below.
-                        <br>
+                        Our algorithm is inspired by the construction of Steiner Tree by <b>bubble soap film</b>, illustrated in the videos below. Moreover, we are finding a <b>condition</b> for <b>the existence of a balanced point</b> in a triangle on a general surface. 
+                        The investigation is divided into two cases: surfaces with non-positive curvature and surfaces with positive curvature. 
+                        <ul>
+                            <li>In the <b>non-positive curvature</b> case, our proof is based on the <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Bonnet_theorem" target="_blank"><b>Gauss-Bonnet theorem</b></a> and the smoothness assumption of the surface.</li>
+                            <li>In the <b>positive curvature</b> case, we start by finding a condition for the existence of a balanced point on a general sphere with curvature 1/R. Then, we use a <a href="https://en.wikipedia.org/wiki/Comparison_theorem" target="_blank"><b>Comparison theorem</b></a>  
+                                in differential geometry to find a general condition on a surface with curvature bounded above by 1/R based on the condition on the sphere.</li>
+                        </ul>
                         I am working on this project
                         with <a href="https://faculty.tcu.edu/richardson/" target="_blank"><b>Dr. Ken Richardson</b></a> at <a href = "https://cse.tcu.edu/mathematics/index.php" target="_blank"> <b>TCU Department of Mathematics</b></a>.
                     <br>
                     <b>Please try our algorithm at <a href="https://github.com/ductoanng/BubbleGeodesicNet" target="_blank"> https://github.com/ductoanng/BubbleGeodesicNet</a></b>.
                     <br>
-                    <iframe width="280" height="260" src="https://www.youtube.com/embed/BVbIRM01UTs?si=av0qDxS1O8LcJclu" title="Steiner Tree construction with bubble soap film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div align="center">
+                        <iframe width="280" height="260" src="https://www.youtube.com/embed/BVbIRM01UTs?si=av0qDxS1O8LcJclu" title="Steiner Tree construction with bubble soap film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                     <video width="280" height="300" controls>
                         <source src="geonet_4_4.mp4" type="video/mp4">
@@ -125,6 +133,8 @@
                           <source src="geonet_5_5.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                         </video>  
+                    </div>
+                    
                     <br>
                 </p>
                 </div>
@@ -133,13 +143,13 @@
             <div>
                 <h3>GO2AI</h3>
                 <div class="container" >
-                    <div class="image" style="float:left;width:250px;height:200px;padding-right:30px;">
+                    <div class="image" style="float:left;width:250px;height:220px;padding-right:30px;">
                       <img src="go.jpeg">
                     </div>
                     <div class="text">
                         <p> <a href="https://ai.tcu.edu/about" target="_blank"> <b>GO2AI</b></a> is a project working with AI and the game Go to optimize playing. 
                         It is inspired by the advent of AlphaGo 2016. In this project, we aim to train AI "slowly" to discover <b>the similarities and differences between AI and human learning processes</b>. 
-                        We are applying <b>Grad-CAM</b>, an explainable AI method, to understand better how the neural network influences the policy of the AI agent in the decision-making process. 
+                        We are applying <a href="https://arxiv.org/abs/1610.02391" target="_blank"><b>Grad-CAM</b></a>, an explainable AI method, to understand better how the neural network influences the policy of the AI agent in the decision-making process. 
                         I am on the team, including <b>Blake Good, Harrison Leath, Shawn Fahimi</b>, and me, under the supervision of <a href="http://csfaculty.tcu.edu/ma/?_ga=2.47839842.497574353.1687126884-1428471056.1687126884" target="_blank"><b>Dr. Liran Ma</b></a> and <a href="https://cse.tcu.edu/mathematics/faculty-staff/view/zeli-dou" target="_blank"><b>Dr. Ze-li Dou</b></a> at the <a href = "https://cse.tcu.edu/computer-science/index.php" target="_blank"> <b>TCU Department of Computer Science</b></a>.
                         </p>
                     </div>
@@ -159,7 +169,7 @@
                 <h3>Publications in English</h3>
                 <ul>
                 <li>
-                    Duc Toan Nguyen and Eric C. Chi. "Towards tuning-free minimum-volume nonnegative
+                    Nguyen, Duc Toan and Eric C. Chi. "Towards tuning-free minimum-volume nonnegative
                     matrix factorization", <i>Proceedings of the 2024 SIAM International Conference on Data Mining (SDM24)</i>. 
                     Society for Industrial and Applied Mathematics, 2024. <a href="https://doi.org/10.1137/1.9781611978032.25" target="_blank">https://doi.org/10.1137/1.9781611978032.25</a>
                 </li>
@@ -189,12 +199,13 @@
                 <h2>Presentation</h2>
             </header>
             <ul>
-                <li>Duc Toan Nguyen. “Towards Tuning-Free Minimum-Volume Nonnegative Matrix Factorization.” Summer school on Bayesian learning and network analysis, <a href="https://viasm.edu.vn/" target="_blank">VIASM</a>, Hanoi, July 2024. (poster)</li>
-                <li>Duc Toan Nguyen and Eric C. Chi. “Towards Tuning-Free Minimum-Volume Nonnegative Matrix Factorization.” SIAM International Conference on Data Mining (<a href="https://www.siam.org/conferences/cm/conference/sdm24" target="_blank">SDM24</a>), April 2024. (<a href="SDM24_presentation.pdf" target="_blank">slides</a>, <a href="SDM24_poster.pdf" target="_blank">poster</a>)</li>
+                <li>Nguyen, Duc Toan. “Towards Tuning-Free Minimum-Volume Nonnegative Matrix Factorization.” Summer school on Bayesian learning and network analysis, <a href="https://viasm.edu.vn/" target="_blank">VIASM</a>, Hanoi, July 2024. (poster)</li>
+                <li>Nguyen, Duc Toan and Eric C. Chi. “Towards Tuning-Free Minimum-Volume Nonnegative Matrix Factorization.” SIAM International Conference on Data Mining (<a href="https://www.siam.org/conferences/cm/conference/sdm24" target="_blank">SDM24</a>), April 2024. (<a href="SDM24_presentation.pdf" target="_blank">slides</a>, <a href="SDM24_poster.pdf" target="_blank">poster</a>)</li>
                 <li>Nguyen, Duc Toan. “A Majorization-Minimization Variant For Minimum-Volume Nonnegative Matrix Factorization.” National Collegiate Research Conference (<a href="https://harvardresearch.org/about-ncrc" target="_blank">NCRC</a>), Harvard University, January 2024.
                 </li>
                 <li>Nguyen, Duc Toan. “Towards Tuning-Free Minimum-Volume Nonnegative Matrix Factorization.” Gulf Coast Undergraduate Research Symposium (<a href="https://gcurs.rice.edu/" target="_blank">GCURS</a>), Rice University, October 2023.</li>
                 <li>Nguyen, Duc Toan. “Searching for networks of minimum length.” Research and Creative Activities Week,  Texas Christian University, September 2023 (poster).</li>
+                <li>Leath, Harrison, Blake Good, Shawn Fahimi, Duc Toan Nguyen, Liran Ma, and Ze-li Dou. “The Sybil in AI: The Many Personalities of a Go Playing Model.” Research and Creative Activities Week,  Texas Christian University, September 2023 (poster).</li>
                 <li>Nguyen, Duc Toan. “Geodesic Nets construction using Genetic Algorithm.” Student Research Symposium (SRS),  Texas Christian University, April 2023 (<a href="https://srs.tcu.edu/media/uploads/2023/MATH2023NGUYEN18047.pdf" target="_blank">poster</a>).
                 </li>
             </ul>
@@ -246,10 +257,10 @@
     </article>
 
     <!-- Paststuffs -->
-    <article id="Paststuffs" class="wrapper style2">
+    <article id="BlogPodcast" class="wrapper style2">
         <div class="container" align="left" style="color:Black;">
             <header>
-                <h2>Past stuffs</h2>
+                <h2>Blog/Podcast</h2>
             </header>
             <div>
                 <h3>"My Favorite Theorem" math podcast - Episode 84 - The Students of TCU</h3>
