@@ -2086,17 +2086,53 @@ input, select, textarea {
 				background: #484848;
 			}
 
-				#nav a.active:before {
-					content: '';
-					display: block;
-					position: absolute;
-					bottom: -0.6em;
-					left: 50%;
-					margin-left: -0.75em;
-					border-left: solid 0.75em transparent;
-					border-right: solid 0.75em transparent;
-					border-top: solid 0.6em #282828;
-				}
+			#nav a.active:before {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: -0.6em;
+				left: 50%;
+				margin-left: -0.75em;
+				border-left: solid 0.75em transparent;
+				border-right: solid 0.75em transparent;
+				border-top: solid 0.6em #282828;
+			}
+			
+		/* Dropdown styling */
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #333;
+			box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+			min-width: 320px;
+			z-index: 1000;
+			border-radius: 8px;
+			font-size:small;
+		}
+
+		/* Dropdown content links */
+		.dropdown-content a {
+			color: white;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+		}
+
+		/* Dropdown hover effect */
+		#nav ul li a:hover, .dropdown-content a:hover {
+			background-color: #555;
+			border-radius: 8px;
+		}
 
 /* Articles */
 

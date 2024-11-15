@@ -38,7 +38,17 @@
     <nav id="nav">
         <ul class="container">
             <li><a href="#Aboutme">About me</a></li>
-            <li><a href="#Projects">Projects</a></li>
+            <!-- <li><a href="#Projects">Projects</a></li> -->
+            <!-- <a href="#Projects">Projects</a> -->
+            <li class="dropdown">
+                <a href="#Projects" class="dropbtn">Projects</a>
+                <div class="dropdown-content">
+                    <a href="#project1">Nonnegative Matrix Factorization</a>
+                    <a href="#project2">Variance-Reduced Shuffling Gradient Descent</a>
+                    <a href="#project3">Geodesic Nets</a>
+                    <a href="#project4">GO2AI</a>
+                </div>
+
             <li><a href="#Publications">Publications</a></li>
             <li><a href="#Presentation">Presentation</a></li>
             <li><a href="#Honors-Awards">Honors/Awards</a></li>
@@ -93,7 +103,7 @@
             <header>
                 <h2>Projects</h2>
             </header>
-            <div>
+            <div id="project1">
                 <h3>Towards Tuning-Free Minimum-Volume Nonnegative Matrix Factorization <br> (<i>REU STAT-DATASCI 2023, Rice University</i>)</h3>
                 <div class="container" >
                     <div class="image" style="float:left;width:250px;height:80px;padding-right:30px;">
@@ -140,7 +150,7 @@
                 </div>
             </div>
             <hr>
-            <div>
+            <div id="project2">
                 <h3>Shuffling Variance Reduction Stochastic Gradient Optimization </h3>
                 <div class="container" >
                     <div class="image" style="float:left;width:250px;height:150px;padding-right:30px;">
@@ -163,7 +173,7 @@
                 </div>
             </div>
             <hr>
-            <div>
+            <div id="project3">
                 <h3>Geodesics Nets - Existence and Construction</h3>
                 <div class="container" >
                     <div class="image" style="float:left;width:250px;height:100px;padding-right:30px;">
@@ -216,7 +226,7 @@
                 </div>
             </div>
             <hr>
-            <div>
+            <div id="project4">
                 <h3>GO2AI</h3>
                 <div class="container" >
                     <!-- <div class="image" style="float:left;width:250px;height:220px;padding-right:30px;">
@@ -420,3 +430,9 @@
 </body>
 
 </html>
+
+<style>
+
+
+
+</style>

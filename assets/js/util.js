@@ -584,4 +584,12 @@
 
 	};
 
+	$(document).ready(function() {
+		// When the "Projects" item is clicked
+		$('#projectNav > a').click(function(event) {
+		  event.preventDefault(); // Prevent default anchor behavior
+		  $('#projectList').slideToggle(); // Toggle the project list visibility
+		});
+	  });
+
 })(jQuery);
