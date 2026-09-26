@@ -26,6 +26,48 @@
             display: block; 
             margin: auto; 
         } 
+
+        .project-entry {
+            margin: 2.5em 0;
+        }
+
+        .project-layout {
+            display: grid;
+            grid-template-columns: minmax(220px, 32%) minmax(0, 1fr);
+            gap: 2em;
+            align-items: start;
+        }
+
+        .project-figure {
+            aspect-ratio: 4 / 3;
+            display: grid;
+            place-items: center;
+            border: 1px solid #000;
+            background: #f2f6f6;
+            color: #74878c;
+            font-size: 0.9em;
+        }
+
+        .project-figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .project-copy p {
+            margin: 0 0 0.75em;
+        }
+
+        @media screen and (max-width: 736px) {
+            .project-layout {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 1.25em;
+            }
+
+            .project-figure {
+                max-width: 100%;
+            }
+        }
     </style> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
@@ -43,10 +85,12 @@
             <li class="dropdown">
                 <a href="#Projects" class="dropbtn">Projects</a>
                 <div class="dropdown-content">
-                    <a href="#project1">Nonnegative Matrix Factorization</a>
-                    <a href="#project2">Variance-Reduced Shuffling Gradient Descent</a>
-                    <a href="#project3">Geodesic Nets</a>
-                    <a href="#project4">GO2AI</a>
+                    <a href="#project1">Fréchet Regression on the BW Manifold</a>
+                    <a href="#project2">Decentralized Riemannian Optimization</a>
+                    <a href="#project3">Square-root Min-Vol NMF</a>
+                    <a href="#project4">Adjusted Shuffling SARAH</a>
+                    <a href="#project5">Geodesic Nets on Riemannian Manifolds</a>
+                    <a href="#project6">GO2AI</a>
                 </div>
 
             <li><a href="#Publications">Publications</a></li>
@@ -86,8 +130,15 @@
                 <div style="max-height: 280px; overflow-y: auto;">
                     <table style="width: 100%; border-collapse: collapse;">
                         <tr>
+                        <tr>
+                            <td style="color: #888; font-size: 0.9em; white-space: nowrap; padding: 0.5em 1em 0.5em 0; vertical-align: top; width: 80px;"><b>Sep 2026</b></td>
+                            <td style="padding: 0.5em 0; vertical-align: top;"> My paper "<b>Fréchet Regression on the Bures-Wasserstein Manifold</b>" (with my advisor César A. Uribe) is accepted for publication at <a href="https://neurips.cc/" target="_blank">NeurIPS 2026</a>.</td>
+                        </tr>
+                        <tr>
                             <td style="color: #888; font-size: 0.9em; white-space: nowrap; padding: 0.5em 1em 0.5em 0; vertical-align: top; width: 80px;"><b>Jun 2026</b></td>
-                            <td style="padding: 0.5em 0; vertical-align: top;"> My paper "<b>Intrinsic Decentralized Stochastic Riemannian Optimization on Manifolds with Bounded Sectional Curvature</b>" (with my advisor César A. Uribe) is accepted for publication at IEEE Control System Letters (<a href="https://ieeecss.org/publication/ieee-control-systems-letters" target="_blank">L-CSS</a>).</td>
+                            <td style="padding: 0.5em 0; vertical-align: top;"> My paper "<b>Intrinsic Decentralized Stochastic Riemannian Optimization on Manifolds with Bounded Sectional Curvature</b>" (with my advisor César A. Uribe) is accepted for publication at IEEE Control System Letters (<a href="10.1109/LCSYS.2026.3706455" target="_blank">link</a>). 
+                            <br>
+                            I will present this paper at the invited session <b>Robust and Resilient Multi-Agent Control and Learning</b> at IEEE CDC 2026 (<a href="https://css.paperplaza.net/conferences/conferences/CDC26/program/CDC26_ContentListWeb_4.html" target="_blank">link</a>).</td>
                         </tr>
                         <tr>
                             <td style="color: #888; font-size: 0.9em; white-space: nowrap; padding: 0.5em 1em 0.5em 0; vertical-align: top; width: 80px;"><b>Jun 2026</b></td>
@@ -119,135 +170,81 @@
             <header>
                 <h2>Projects</h2>
             </header>
-            <div id="project1">
-                <h3>Towards Tuning-Free Minimum-Volume Nonnegative Matrix Factorization <br> (<i>REU STAT-DATASCI 2023, Rice University</i>)</h3>
-                <div class="container" >
-                    <div class="image" style="float:left;width:250px;height:80px;padding-right:30px;">
-                      <img src="NMF-table.png">
-                      <!-- <br>
-                      <img src="MMimage.png"> -->
-                    </div>
-                    <div class="text">
-                        <p> <b>Nonnegative Matrix Factorization (NMF)</b> is a dimensionality reduction technique used in data analysis and machine learning. 
-                            It aims to decompose a nonnegative matrix as a product of two lower-rank nonnegative matrices. 
-                            In this project, we implemented and compared multiple minimum-volume NMF algorithms in synthetic and practical data. 
-                            Also, we applied the <b>Majorization-Minimization</b> idea, a popular paradigm for solving challenging optimization problems. 
-                            We proposed a new algorithm named <b>Square-Root Minimum-Volume NMF</b> inspired by the Square-Root Lasso problem.
-                            Our method improves the previous minimum-volume NMF methods by automatically determining the optimal tuning parameter. 
-                            I presented this research at the <b><i>Gulf Coast Undergraduate Research Symposium <a href="https://gcurs.rice.edu/" target="_blank">(GCURS)</a> 2023</i></b> and received the
-                             <b style="color:red;">Outstanding Session Presentation Award</b> from the <b>Computational Applied Mathematics and Operations Research Department, Rice University</b>. 
-                            Our paper is published in the <b style="color:red;">Proceedings of the 2024 SIAM International Conference on Data Mining (<a href="https://www.siam.org/conferences-events/past-event-archive/sdm24/" target="_blank">SDM24</a>).</b> Moreover, I also achieved the <b style="color:red;">SIAM Student Travel Award</b>
-                            for the SDM24!
-                            <br>
-                            <br>
-                            Please visit these links for: 
-                                <br>
-                                &emsp;- <a href="https://doi.org/10.1137/1.9781611978032.25" target="_blank"><b>The paper</b></a>.
-                                <br>
-                                &emsp;- <a href="SDM24_presentation.pdf" target="_blank"><b>The presentation slides</b></a>
-                                <br>
-                                &emsp;- <a href="SDM24_poster.pdf" target="_blank"><b>The poster</b></a>
-                            <br>
-                            <br>
-                            I worked on this project
-                            with <a href="https://www.ericchi.com" target="_blank"><b>Dr. Eric C. Chi </b></a> under <a href = "https://statistics.rice.edu/academics/undergraduate/research-experiences-undergraduates#:~:text=During%20the%20REU%20at%20Rice,of%20their%20research%20experience%20at" target="_blank"> <b>REU STAT-DATASCI 2023</b></a> at <a href = "https://statistics.rice.edu" target="_blank"> <b>Rice Department of Statistics</b></a>. 
-                            <br>
-                            <div align="center">
-                                <img src="MM.png" class="resizable-image" style="width:600px;height:300px">
-                            </div>
-                            </p>
-                        </p>
+            <div class="project-entry" id="project1">
+                <h3>Fréchet Regression on the Bures-Wasserstein Manifold</h3>
+                <div class="project-layout">
+                    <div class="project-figure"><img src="extrapolation-range.png" alt="Fréchet regression on the Bures-Wasserstein manifold"></div>
+                    <div class="project-copy">
+                        <p><b>Research question:</b> Fréchet regression models Euclidean predictors and metric-space responses, but on the Bures-Wasserstein manifold its signed weights can make extrapolation ill-posed or produce invalid positive-definite predictions. What conditions make these conditional Bures-Wasserstein barycenters exist and remain computable?</p>
+                        <p><b>Main contributions:</b> The paper gives a spectral-dominance condition guaranteeing a minimizer and characterizes the objective's landscape. It also develops projection-free Riemannian and pairwise stochastic methods, with experiments on network regression and large-scale diffusion tensors.</p>
+                        <p><b><a href="https://arxiv.org/abs/2604.03566" target="_blank">Paper</a></b>: accepted at <a href="https://neurips.cc/" target="_blank">NeurIPS 2026</a>.</p>
+                        <p><b>Advisor:</b> Dr. César A. Uribe (Department of Electrical and Computer Engineering, Rice University).</p>
                     </div>
                 </div>
             </div>
             <hr>
-            <div id="project2">
-                <h3>Shuffling Variance Reduction Stochastic Gradient Optimization </h3>
-                <div class="container" >
-                    <div class="image" style="float:left;width:250px;height:150px;padding-right:30px;">
-                      <img src="optML.png">
-                    </div>
-                    <div class="text">
-                        <p> <b>Variance Reduction</b> is an approach in Stochastic Optimization Methods that improves the convergence rate compared to the original <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent" target="_blank"><b>Stochastic Gradient Descent</b></a> (<b>SGD)</b>.
-                            Intuitively, Variance Reduction methods decrease the variance of the gradient so that the gradient is more direct to the optimal point.
-                            Moreover, the <b>shuffling paradigm</b> has recently become a 'hot' topic in the optimization society, and it can improve the rate for SGD in many cases. 
-                            In this research project, we combine the shuffling paradigm into a famous variance reduction method called <a href="https://arxiv.org/abs/1703.00102" target="_blank"><b>SARAH</b></a> (<b>StochAstic Recursive grAdient algoritHm</b>), analyze its efficiency (convergence rate and complexity), and compare it to other shuffling gradient methods.
-                            <br>
-                            <br>
-                            I am working on this project
-                        with <a href="https://lamnguyen-mltd.github.io/" target="_blank"><b>Dr. Lam M. Nguyen</b></a> (IBM Research) and <a href = "https://htt-trangtran.github.io/" target="_blank"> <b>Dr. Trang H. Tran</b></a> (Lehigh ISE).
-                        <div align="center">
-                            <img src="contour-plot-1.png" class="resizable-image" style="width:1000px;height:350px">
-                          </div>
-                        </p>   
+            <div class="project-entry" id="project2">
+                <h3>Intrinsic Decentralized Stochastic Riemannian Optimization</h3>
+                <div class="project-layout">
+                    <div class="project-figure"><img src="sphere_decentralized_animation.gif" alt="Decentralized stochastic optimization on a Riemannian manifold"></div>
+                    <div class="project-copy">
+                        <p><b>Research question:</b> Decentralized learning on non-Euclidean data needs methods that respect manifold geometry; existing intrinsic methods often use fixed step sizes and converge only to a neighborhood. Can diminishing step sizes give stronger guarantees on manifolds with bounded sectional curvature, including positive curvature?</p>
+                        <p><b>Main contributions:</b> The paper proves an \(O\!\left(\frac{1}{T}\right)\) network-consensus error bound and an \(O\!\left(\frac{\log T}{\sqrt{T}}\right)\) ergodic optimality-gap bound, giving an exact non-asymptotic guarantee for this setting. It demonstrates the method on distributed PCA over a Grassmann manifold.</p>
+                        <p><b><a href="https://doi.org/10.1109/LCSYS.2026.3706455" target="_blank">Paper</a></b>: <i>IEEE Control Systems Letters</i>, 10 (2026), and invited session presentation at <a href="https://css.paperplaza.net/conferences/conferences/CDC26/program/CDC26_ContentListWeb_4.html" target="_blank">IEEE CDC 2026</a>.</p>
+                        <p><b>Advisor:</b> Dr. César A. Uribe (Department of Electrical and Computer Engineering, Rice University).</p>
                     </div>
                 </div>
             </div>
             <hr>
-            <div id="project3">
-                <h3>Geodesics Nets - Existence and Construction</h3>
-                <div class="container" >
-                    <div class="image" style="float:left;width:250px;height:100px;padding-right:30px;">
-                      <img src="geodesicnet.png">
+            <div class="project-entry" id="project3">
+                <h3>Towards Tuning-Free Minimum-Volume Nonnegative Matrix Factorization</h3>
+                <div class="project-layout">
+                    <div class="project-figure"><img src="MM.png" alt="Minimum-volume nonnegative matrix factorization"></div>
+                    <div class="project-copy">
+                        <p><b>Research question:</b> Nonnegative matrix factorization represents nonnegative data with lower-rank nonnegative factors, while minimum-volume variants rely on a tuning parameter. Can that parameter be selected automatically without giving up the minimum-volume approach?</p>
+                        <p><b>Main contributions:</b> The paper proposes Square-Root Minimum-Volume NMF, inspired by the Square-Root Lasso, and uses a majorization-minimization algorithm to remove the need to tune the parameter manually. The method is evaluated on synthetic and practical data.</p>
+                        <p><b><a href="https://doi.org/10.1137/1.9781611978032.25" target="_blank">Paper</a></b>: <i>Proceedings of the 2024 SIAM International Conference on Data Mining (SDM 2024)</i>.</p>
+                        <p><b>Advisor:</b> Dr. Eric C. Chi (School of Statistics, University of Minnesota).</p>
                     </div>
-                    <div class="text">
-                        <p> A <b>geodesic net</b> is a network that connects multiple points with the geodesics while ensuring that each additional point is <b>"<i> balanced </i>"</b> and stretched equally by its neighbors through those curves. 
-                        In this project, we are finding a new algorithm that can construct geodesic nets on different surfaces based on <b>Steiner trees</b> since Steiner trees are satisfied to be geodesic nets. 
-                        Our algorithm is inspired by the construction of Steiner Tree by <b>bubble soap film</b>, illustrated in the videos below. Moreover, we are finding a <b>condition</b> for <b>the existence of a balanced point</b> in a triangle on a general surface. 
-                        The investigation is divided into two cases: surfaces with non-positive curvature and surfaces with positive curvature. 
-                        <br>
-                        &emsp;- In the <b>non-positive curvature</b> case, our proof is based on the <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Bonnet_theorem" target="_blank"><b>Gauss-Bonnet theorem</b></a>.
-                        <br>
-                        &emsp;- In the <b>positive curvature</b> case, we find a condition for the existence of a balanced point on a general sphere with curvature \(1/R^2\). 
-                        <br>
-                        Then, we use <a href="https://en.wikipedia.org/wiki/Jacobi_field" target="_blank"><b>Jacobi fields</b></a> (vector fields describing how geodesics "spread") and <a href="https://en.wikipedia.org/wiki/Rauch_comparison_theorem" target="_blank"><b>Rauch comparison theorem</b></a>  
-                        to find a general condition on a surface with curvature bounded above by \(1/R^2\) based on the condition on the sphere.
-                        <br>
-                        <br>
-                        I am working on this project
-                        with <a href="https://faculty.tcu.edu/richardson/" target="_blank"><b>Dr. Ken Richardson</b></a> at <a href = "https://cse.tcu.edu/mathematics/index.php" target="_blank"> <b>TCU Department of Mathematics</b></a>.
-                    <br>
-                    <b>Please try our algorithm at <a href="https://github.com/ductoanng/BubbleGeodesicNet" target="_blank"> https://github.com/ductoanng/BubbleGeodesicNet</a></b>.
-                    <br>
-                            
-                    <div align="center">
-                        <iframe width="280" height="260" src="https://www.youtube.com/embed/BVbIRM01UTs?si=av0qDxS1O8LcJclu" title="Steiner Tree construction with bubble soap film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                    <video width="280" height="300" controls>
-                        <source src="geonet_4_4.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                      </video>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                      <video width="280" height="300" controls>
-                          <source src="geonet_5_5.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                        </video>  
-                    </div>
-                    
-                    <br>
-                </p>
-                </div>
                 </div>
             </div>
             <hr>
-            <div id="project4">
+            <div class="project-entry" id="project4">
+                <h3>Adjusted Shuffling SARAH</h3>
+                <div class="project-layout">
+                    <div class="project-figure"><img src="contour-plot-1.png" alt="Adjusted Shuffling SARAH optimization method"></div>
+                    <div class="project-copy">
+                        <p><b>Research question:</b> Shuffling can improve stochastic-gradient methods, but variance-reduced methods must balance strong convergence guarantees with the cost of full-gradient computations. How can shuffling be integrated into SARAH while scaling to large datasets?</p>
+                        <p><b>Main contributions:</b> The paper introduces a dynamic-weighting shuffling variant of SARAH and analyzes exact and mini-batch inexact modes. The exact mode matches best-known guarantees in strongly convex and non-convex settings, while the inexact mode has total complexity independent of dataset size.</p>
+                        <p><b><a href="https://doi.org/10.1007/s10957-026-03033-y" target="_blank">Paper</a></b>: <i>Journal of Optimization Theory and Applications</i> (JOTA), 2026.</p>
+                        <p><b>Advisors:</b> Dr. Trang H. Tran (Emory University) and Dr. Lam M. Nguyen (IBM Research).</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="project-entry" id="project5">
+                <h3>Geodesic Nets: Existence and Construction</h3>
+                <div class="project-layout">
+                    <div class="project-figure"><img src="geodesicnet.png" alt="Geodesic net on a Riemannian surface"></div>
+                    <div class="project-copy">
+                        <p><b>Research question:</b> A geodesic net has geodesic edges and balanced interior vertices, where the incident unit tangent vectors sum to zero. Under what geometric conditions does a triangle on a general Riemannian surface contain such a balanced vertex?</p>
+                        <p><b>Main contributions:</b> The paper proves existence when the triangle's angles are each below \(2\pi/3\) and its side lengths are sufficiently small, generalizing the Fermat-point result from the plane. The broader project also investigates construction of geodesic nets on surfaces.</p>
+                        <p><b><a href="https://doi.org/10.1007/s00022-025-00775-4" target="_blank">Paper</a></b>: <i>Journal of Geometry</i>, 116 (2025), article 36.</p>
+                        <p><b>Advisor:</b> Dr. Ken Richardson (Department of Mathematics, Texas Christian University).</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="project-entry" id="project6">
                 <h3>GO2AI</h3>
-                <div class="container" >
-                    <!-- <div class="image" style="float:left;width:250px;height:220px;padding-right:30px;">
-                      <img src="go.jpeg">
-                    </div> -->
-                    <div class="text">
-                        <p> <a href="https://ai.tcu.edu/about" target="_blank"> <b>GO2AI</b></a> is a project working with AI and the game Go to optimize playing. 
-                        It is inspired by the advent of AlphaGo 2016. In this project, we aim to train AI "slowly" to discover <b>the similarities and differences between AI and human learning processes</b>. 
-                        We are applying <a href="https://arxiv.org/abs/1610.02391" target="_blank"><b>Grad-CAM</b></a>, an explainable AI method, to understand better how the neural network influences the policy of the AI agent in the decision-making process. 
-                        The image below shows how the grad-CAM method visualizes how model Q (the AI agent) decides the optimal move from iteration 1 to the final iteration (iter 70).
-                        I am part of a dedicated team, including <b>Blake Good, Harrison Leath, Shawn Fahimi</b>, and me, under the supervision of <a href="http://csfaculty.tcu.edu/ma/?_ga=2.47839842.497574353.1687126884-1428471056.1687126884" target="_blank"><b>Dr. Liran Ma</b></a> and <a href="https://cse.tcu.edu/mathematics/faculty-staff/view/zeli-dou" target="_blank"><b>Dr. Ze-li Dou</b></a> at the <a href = "https://cse.tcu.edu/computer-science/index.php" target="_blank"> <b>TCU Department of Computer Science</b></a>.
-                        <br>
-                        </p>
+                <div class="project-layout">
+                    <div class="project-figure"><img src="gradcam-go.png" alt="Grad-CAM visualization for the GO2AI Go-playing model"></div>
+                    <div class="project-copy">
+                        <p><b>Research question:</b> Can training a Go-playing AI gradually reveal similarities and differences between human and machine learning?</p>
+                        <p><b>Main contributions:</b> The project applies Grad-CAM to visualize how the agent's neural network influences move selection over training, including its progression from early iterations to iteration 70. It was conducted with Blake Good, Harrison Leath, and Shawn Fahimi under Dr. Liran Ma and Dr. Ze-li Dou at TCU.</p>
+                        <p><b>Project:</b> <a href="https://ai.tcu.edu/about" target="_blank">GO2AI at TCU</a>.</p>
+                        <p><b>TCU team:</b> Blake Good, Harrison Leath, and Shawn Fahimi; advisors Dr. Liran Ma and Dr. Ze-li Dou.</p>
                     </div>
-                    <div align="center">
-                        <img src="gradcam-go.png" class="resizable-image" style="width:800px;height:500px">
-                      </div>
                 </div>
             </div>
         </div>    
@@ -266,11 +263,11 @@
 
         <li>
             <b>Nguyen, D. T.</b> & Uribe, C. A. "Fréchet Regression on the Bures-Wasserstein Manifold."
-            <i>(In Revision for the Conference on Neural Information Processing Systems - NeurIPS 2026)</i>.
+            <i>(Accpeted for the Conference on Neural Information Processing Systems - NeurIPS 2026)</i>.
         </li>
         <li>
             <b>Nguyen, D. T.</b> & Uribe, C. A. "Intrinsic Decentralized Stochastic Riemannian Optimization on Manifolds with Bounded Sectional Curvature."
-            <i>(Accepted for publication at IEEE Control Systems Letters)</i>.
+            <i>IEEE Control Systems Letters</i>.
         </li>
         <li>
             <b>Nguyen, D. T.</b>, Tran, T. H., & Nguyen, L. M. "Adjusted Shuffling SARAH: Advancing complexity analysis via dynamic gradient weighting."
